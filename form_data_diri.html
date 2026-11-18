@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Data Diri</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f7fb; color: #253247; }
+    .card { max-width: 520px; margin: 65px auto; background: white; padding: 32px;
+            border-radius: 12px; box-shadow: 0 8px 25px rgba(36, 60, 95, .1); }
+    h1 { font-size: 25px; margin: 0 0 26px; }
+    .field { margin-bottom: 21px; }
+    label, legend { display: block; font-weight: 600; margin-bottom: 8px; }
+    input[type="text"], input[type="date"] { width: 100%; padding: 11px; border: 1px solid #ccd4df;
+            border-radius: 6px; font: inherit; }
+    fieldset { border: 0; padding: 0; margin: 0 0 22px; }
+    .choice { display: flex; align-items: center; gap: 9px; margin: 9px 0; font-weight: normal; }
+    .choice input { width: 16px; height: 16px; margin: 0; accent-color: #1877d2; }
+    button { border: 0; background: #1877d2; color: white; padding: 12px 24px;
+             border-radius: 6px; font-size: 15px; cursor: pointer; }
+    button:hover { background: #115ca5; }
+    @media (max-width: 600px) { .card { margin: 20px 14px; padding: 24px; } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Formulir Data Diri</h1>
+    <form action="proses_data_diri.php" method="POST">
+      <div class="field">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required maxlength="100" placeholder="Masukkan nama lengkap">
+      </div>
+      <div class="field">
+        <label for="tanggal_lahir">Tanggal Lahir:</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+      </div>
+      <fieldset>
+        <legend>Hobi:</legend>
+        <label class="choice"><input type="checkbox" name="hobi[]" value="Membaca"> Membaca</label>
+        <label class="choice"><input type="checkbox" name="hobi[]" value="Olahraga"> Olahraga</label>
+        <label class="choice"><input type="checkbox" name="hobi[]" value="Musik"> Musik</label>
+        <label class="choice"><input type="checkbox" name="hobi[]" value="Lainnya"> Lainnya</label>
+      </fieldset>
+      <button type="submit">Kirim</button>
+    </form>
+  </main>
+</body>
+</html>
